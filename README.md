@@ -1,0 +1,5 @@
+# Descrição
+Este é um utilitário de linha de comando simples, projetado para simplificar o processo de migração de arquivos do Google Photos para uma única pasta em seu sistema. O Google Photos gera várias subpastas e arquivos JSON, que podem complicar o gerenciamento ao fazer backup. Este utilitário permite que você consolide todos esses arquivos em uma pasta de destino única e também oferece a flexibilidade de excluir arquivos com extensões "inválidas" ou que você não deseja migrar, como os arquivos .json que contêm metadados. Simplificando, é uma ferramenta que facilita a organização e a transferência dos seus arquivos do Google Photos de forma eficiente e personalizada para atender às suas necessidades.
+
+# Aviso
+Tenha cuidado ao usar a opção de exclusão de arquivos. Os arquivos excluídos podem ser não ser recuperáveis.
