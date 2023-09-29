@@ -9,7 +9,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\MoveFilesToFolder.Kernel\MoveFilesToFolder.Kernel.csproj" />
-      <ProjectReference Include="..\MoveFilesToSingleFolder.Kernel\MoveFilesToSingleFolder.Kernel.csproj" />
     </ItemGroup>
 
 </Project>

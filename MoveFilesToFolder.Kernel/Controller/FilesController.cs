@@ -5,17 +5,28 @@ public class FilesController
     public static void MoveFiles(string sourceFolderPath, string destinationFolderPath)
     {
         int countMoved = 0;
+        int countNotMoved = 0;
 
         foreach (string filePath in Directory.GetFiles(sourceFolderPath, "*", SearchOption.AllDirectories))
         {
             string destinationFilePath = Path.Combine(destinationFolderPath, Path.GetFileName(filePath));
-            File.Move(filePath, destinationFilePath);
-            Console.WriteLine($"Arquivo {filePath} movido para {destinationFilePath}");
-            countMoved++;
+
+            if (File.Exists(destinationFilePath))
+            {
+                Console.WriteLine($"O arquivo {Path.GetFileName(filePath)} já existe no diretório de destino. Não foi movido.");
+                countNotMoved++;
+            }
+            else
+            {
+                File.Move(filePath, destinationFilePath);
+                Console.WriteLine($"Arquivo {Path.GetFileName(filePath)} movido para {destinationFilePath}");
+                countMoved++;
+            }
         }
 
         Console.WriteLine("Todos os arquivos foram movidos com sucesso.");
         Console.WriteLine($"Total de arquivos movidos: {countMoved}");
+        Console.WriteLine($"Total de arquivos não movidos: {countNotMoved}");
     }
 
     public static void DeleteInvalidFiles(string sourceFolderPath, string extension)
